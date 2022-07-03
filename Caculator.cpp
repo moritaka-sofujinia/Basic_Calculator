@@ -1,0 +1,48 @@
+#include <iostream>
+using namespace std; 
+ 
+int main()
+{
+    char toanTu;
+    float so1, so2, ketQua;
+    bool kt = true;
+ 
+    cout << "Nhap toan hang thu nhat: ";
+    cin >> so1;
+    cout << "Nhap toan tu: ";
+    cin >> toanTu;
+    cout << "Nhap toan hang thu hai: ";
+    cin >> so2;
+ 
+    switch(toanTu)
+    {
+        case '+': 
+            ketQua = so1 + so2;
+            break;
+        case '-': 
+            ketQua = so1 - so2;
+            break;
+        case '*': 
+            ketQua = so1 * so2;
+            break;
+        case '/':
+            if (so2 != 0) {
+                ketQua = so1 / so2;
+            } else {
+                kt = false;
+            }
+             
+            break;
+        default: 
+            printf("Toan tu khong hop le");
+    }
+ 
+    cout << "----------------------------" << endl;
+    if (kt) {
+        cout << so1 << " " << toanTu << " " << so2 << " = " << ketQua << endl;
+    } else {
+        cout << "Khong the thuc hien phep chia cho 0" << endl;
+    }
+     
+    return 0;
+}
